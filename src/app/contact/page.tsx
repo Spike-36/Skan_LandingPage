@@ -10,7 +10,10 @@ export default function ContactPage() {
     const form = e.currentTarget
     const data = new FormData(form)
 
-    const res = await fetch("https://formspree.io/f/https://formspree.io/f/mzzggkyb", {
+    const res = await fetch("https://formspree.io/f/git add .
+git commit -m "Connect contact form to real Formspree endpoint"
+git push
+", {
       method: "POST",
       body: data,
       headers: {

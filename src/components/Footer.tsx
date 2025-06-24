@@ -1,4 +1,4 @@
-]import Link from 'next/link';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center">
         <p>© {new Date().getFullYear()} Pete — All rights reserved</p>
         <div className="space-x-4 mt-2 sm:mt-0 flex items-center">
-          <Link href="/services" className="hover:text-black">Services</Link>
-          <Link href="/projects" className="hover:text-black">Projects</Link>
-          <Link href="/technical" className="hover:text-black">Technical</Link>
-          <Link href="/contact" className="hover:text-black">Contact</Link>
+          <Link href="/services"><span className="hover:text-black">Services</span></Link>
+          <Link href="/projects"><span className="hover:text-black">Projects</span></Link>
+          <Link href="/technical"><span className="hover:text-black">Technical</span></Link>
+          <Link href="/contact"><span className="hover:text-black">Contact</span></Link>
           <a
             href="https://github.com/Spike-36"
             target="_blank"

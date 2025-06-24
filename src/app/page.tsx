@@ -1,10 +1,32 @@
+import Hero from "@/components/Hero"
+import FeatureCard from "@/components/FeatureCard"
+import SignupForm from "@/components/SignupForm"
+
+const features = [
+  {
+    title: "Design Thinking for Law",
+    description: "Learn how legal services can be redesigned for better accessibility and user experience.",
+  },
+  {
+    title: "Education & Workshops",
+    description: "Join interactive sessions on legal design for students, lawyers, and innovators.",
+  },
+  {
+    title: "Project Spotlights",
+    description: "Explore real-world prototypes and tools making a difference in legal systems.",
+  },
+]
+
 export default function HomePage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">Hi, I&apos;m Pete.</h1>
-      <p className="mt-4 text-gray-700">
-        I build lean, functional prototypes and MVPs for startups and legal tech teams.
-      </p>
-    </div>
+    <>
+      <Hero />
+      <section className="max-w-4xl mx-auto py-16 px-4 grid gap-8 md:grid-cols-3">
+        {features.map((f) => (
+          <FeatureCard key={f.title} {...f} />
+        ))}
+      </section>
+      <SignupForm />
+    </>
   )
 }

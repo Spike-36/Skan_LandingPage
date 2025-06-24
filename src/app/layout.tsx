@@ -1,6 +1,7 @@
 import "./globals.css"
 import Link from "next/link"
 import { ReactNode } from "react"
+import Footer from "../components/Footer"
 
 export const metadata = {
   title: "Pete Milligan – Portfolio",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-gray-900">
+      <body className="min-h-screen bg-white text-gray-900 flex flex-col">
         <nav className="p-4 border-b bg-gray-50 text-sm font-medium text-black">
           <div className="max-w-4xl mx-auto flex gap-6">
             <Link href="/" className="hover:underline">Home</Link>
@@ -20,7 +21,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Link href="/contact" className="hover:underline">Contact</Link>
           </div>
         </nav>
-        <main className="max-w-4xl mx-auto p-6">{children}</main>
+        <main className="max-w-4xl mx-auto p-6 flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   )

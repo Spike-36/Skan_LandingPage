@@ -1,7 +1,11 @@
 import { projects } from "@/lib/projects"
 import { notFound } from "next/navigation"
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
+type ProjectDetailPageProps = {
+  params: { slug: string };
+};
+
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const project = projects.find((p) => p.slug === params.slug)
 
   if (!project) {

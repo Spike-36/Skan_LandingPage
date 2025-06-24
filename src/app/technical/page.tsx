@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function TechnicalPage() {
   return (
     <div className="min-h-screen bg-black text-white px-6 py-10 max-w-4xl mx-auto">
@@ -37,9 +39,9 @@ export default function TechnicalPage() {
       </section>
 
       <div className="text-sm text-gray-400">
-        <a href="/services" className="underline hover:text-yellow-400">
-          View technical details →
-        </a>
+        <Link href="/services" className="underline hover:text-yellow-400">
+          View service overview →
+        </Link>
       </div>
     </div>
   );

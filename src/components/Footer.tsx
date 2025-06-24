@@ -1,13 +1,15 @@
+]import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-50 text-gray-600 text-sm py-6 px-6 border-t border-gray-200 mt-12">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center">
         <p>© {new Date().getFullYear()} Pete — All rights reserved</p>
         <div className="space-x-4 mt-2 sm:mt-0 flex items-center">
-          <a href="/services" className="hover:text-black">Services</a>
-          <a href="/projects" className="hover:text-black">Projects</a>
-          <a href="/technical" className="hover:text-black">Technical</a>
-          <a href="/contact" className="hover:text-black">Contact</a>
+          <Link href="/services" className="hover:text-black">Services</Link>
+          <Link href="/projects" className="hover:text-black">Projects</Link>
+          <Link href="/technical" className="hover:text-black">Technical</Link>
+          <Link href="/contact" className="hover:text-black">Contact</Link>
           <a
             href="https://github.com/Spike-36"
             target="_blank"

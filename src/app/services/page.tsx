@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ServicesPage() {
   return (
     <div className="px-6 py-10 max-w-3xl mx-auto">
@@ -8,8 +10,11 @@ export default function ServicesPage() {
         <li>Rapid prototyping & UI logic design</li>
       </ul>
       <div className="mt-8 text-sm text-gray-400">
-        For implementation details, <a href="/technical" className="underline hover:text-yellow-300">view the technical overview →</a>
+        For implementation details,{' '}
+        <Link href="/technical" className="underline hover:text-yellow-300">
+          view the technical overview →
+        </Link>
       </div>
     </div>
-  )
+  );
 }

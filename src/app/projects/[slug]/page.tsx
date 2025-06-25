@@ -1,19 +1,20 @@
 import { projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams(): { slug: string }[] {
+// Next.js App Router props shape
+export interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export function generateStaticParams(): PageProps["params"][] {
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function ProjectDetailPage({ params }: Params) {
+export default function ProjectDetailPage({ params }: PageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {

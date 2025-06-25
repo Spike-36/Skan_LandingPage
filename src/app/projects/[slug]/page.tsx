@@ -1,5 +1,11 @@
-import { projects } from "@/lib/projects"
-import { notFound } from "next/navigation"
+import { projects } from "@/lib/projects";
+import { notFound } from "next/navigation";
+
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -7,11 +13,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug)
+export default function ProjectDetailPage({ params }: Props) {
+  const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
-    return notFound()
+    return notFound();
   }
 
   return (

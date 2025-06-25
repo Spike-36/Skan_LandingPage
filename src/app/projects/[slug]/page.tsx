@@ -1,14 +1,19 @@
 import { projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
+export function generateStaticParams(): { slug: string }[] {
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-// @ts-expect-error: bypassing invalid PageProps constraint
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
+type Params = {
+  params: {
+    slug: string;
+  };
+};
+
+export default function ProjectDetailPage({ params }: Params) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {

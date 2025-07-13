@@ -1,28 +1,32 @@
-import "./globals.css"
-import Link from "next/link"
-import { ReactNode } from "react"
-import Footer from "../components/Footer"
+import './globals.css'
+import { IBM_Plex_Sans, Source_Serif_4 } from 'next/font/google'
+import ConditionalNavbar from '@/components/ConditionalNavbar'
+
+const ibm = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-ibm',
+  display: 'swap',
+})
+
+const serif = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-serif',
+  display: 'swap',
+})
 
 export const metadata = {
-  title: "Pete Milligan – Portfolio",
-  description: "I build lean prototypes and legal tech products.",
+  title: 'Agile Advocacy',
+  description: 'Why legal tech fails — and how to fix it.',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white text-gray-900 flex flex-col">
-        <nav className="p-4 border-b bg-gray-50 text-sm font-medium text-black">
-          <div className="max-w-4xl mx-auto flex gap-6">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/projects" className="hover:underline">Projects</Link>
-            <Link href="/services" className="hover:underline">Services</Link>
-            <Link href="/about" className="hover:underline">About</Link>
-            <Link href="/contact" className="hover:underline">Contact</Link>
-          </div>
-        </nav>
-        <main className="max-w-4xl mx-auto p-6 flex-grow">{children}</main>
-        <Footer />
+    <html lang="en" className={`${ibm.variable} ${serif.variable}`}>
+      <body className="font-sans">
+        <ConditionalNavbar />
+        {children}
       </body>
     </html>
   )

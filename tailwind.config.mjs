@@ -1,14 +1,24 @@
-import typography from '@tailwindcss/typography';
+import typography from '@tailwindcss/typography'
 
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
-    './content/**/*.{md,mdx}', // if blog posts live here
+    './content/**/*.{md,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-ibm)', 'sans-serif'],
+        serif: ['var(--font-serif)', 'serif'],
+      },
+      colors: {
+        charcoal: '#333333',
+        offwhite: '#F9F9F9',
+        sand: '#DDD5C7',
+        olive: '#708070',
+      },
+    },
   },
   plugins: [typography],
-};
+}

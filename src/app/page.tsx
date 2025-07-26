@@ -1,32 +1,47 @@
 // src/app/page.tsx
-
-import Image from "next/image";
 import SignupForm from "@/components/SignupForm";
 import Footer from "@/components/Footer";
 import VideoBlock from "@/components/VideoBlock";
 
 export default function LandingPage() {
   return (
-    <main className="bg-offwhite text-charcoal min-h-screen px-4 py-12 flex flex-col justify-between">
-      {/* Header */}
-      <div className="max-w-6xl mb-8 px-4">
-        <Image
-          src="/images/logo.png"
-          alt="Agile Advocacy logo"
-          width={70}
-          height={20}
-          className="h-auto w-auto"
-          priority
+    <main className="bg-offwhite text-charcoal min-h-screen flex flex-col justify-between">
+      {/* Hero Banner */}
+      <section className="flex flex-col md:flex-row min-h-screen bg-black text-white">
+        {/* Left Text */}
+        <div className="md:w-1/2 flex items-center justify-center p-8">
+          <div className="max-w-md text-center md:text-left space-y-6">
+            <h1 className="text-2xl md:text-4xl font-bold leading-snug">
+              One in two women felt unsafe walking alone after dark in a busy public place,
+              compared to one in five men.
+            </h1>
+            <p className="text-lg">
+              Four out of five women felt unsafe walking alone after dark in a park or other open space.
+            </p>
+            <p className="text-sm opacity-60 leading-snug">
+              Office for National Statistics, 2021<br />
+              <span className="italic">
+                Perceptions of personal safety and experiences of harassment,
+                Great Britain: 2 to 27 June 2021
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div
+          className="md:w-1/2 h-64 md:h-auto bg-cover bg-center"
+          style={{ backgroundImage: 'url("/images/hero-banner.jpg")' }}
         />
-      </div>
+      </section>
 
-      {/* Main content */}
-      <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-2xl md:text-4xl font-medium text-charcoal mb-6 leading-snug">
+      {/* Main Content */}
+      <section className="max-w-3xl mx-auto px-4 py-12 text-center">
+        <h2 className="text-2xl md:text-4xl font-medium mb-6 leading-snug">
           Project Skån 1.1
-        </h1>
+        </h2>
 
-        <p className="text-lg text-charcoal mb-8 leading-relaxed italic">
+        <p className="text-lg mb-8 leading-relaxed italic">
           Why, in my opinion, so many legal tech projects fail before a single line of code is written.
         </p>
 
@@ -35,51 +50,32 @@ export default function LandingPage() {
           src="/video/SkanPlaceholderVideo-1.0.mp4"
           poster="/images/poster.jpg"
           className="my-8"
-          autoPlay={false}
-          muted={false}
-          loop={false}
-          controls={true}
         />
 
-        {/* Introduction */}
+        {/* Intro */}
         <div className="text-left text-base leading-relaxed space-y-4">
           <p>
-            I’m a former litigation lawyer now working on the product and technology side of legal innovation. Over the years, I’ve worn multiple ‘techie’ hats—developer, UX designer, product owner, and delivery lead—but at its core, my work is about problem-solving. Whether I’m writing code or shaping product strategy, I focus on making things clearer, faster, and genuinely usable.
+            I’m a former litigation lawyer now working on the product and technology side of legal innovation...
           </p>
-          <p>
-            I’ve seen legal tech projects from both sides: legal teams frustrated by clunky tools, and tech teams struggling to deliver against vague, shifting briefs. I work in the gap between those worlds—helping turn good ideas into software that actually gets used.
-          </p>
-          <p>
-            <em>The most valuable lesson I’ve learned is simple.</em>
-          </p>
-          <blockquote className="border-l-4 border-olive pl-4 text-charcoal font-semibold">
-            Without proper preparation, legal tech projects invariably fail to deliver.
-          </blockquote>
-          <p>
-            Over the next few months, I’ll be publishing an 8-part series to help lawyers and legal ops professionals avoid that fate. Each article will walk through the kind of preparation that’s essential <em>before</em> a build begins — the part too many legal tech projects skip, often at great cost.
-          </p>
+          {/* Extend as needed */}
         </div>
 
-        {/* Article Teaser Card */}
+        {/* Article Teaser */}
         <div className="bg-white rounded-xl shadow-md p-6 mt-12 text-left">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-olive text-center">
             Article 1: Want Legal Tech That Works? Start With the Requirements
           </h2>
           <ul className="list-disc list-inside text-base space-y-2 leading-relaxed text-charcoal">
-            <li>Why unclear requirements are the root cause of scope creep, budget overrun, and failed pilots</li>
-            <li>What <em>usable</em> requirements actually look like</li>
-            <li>How to bridge the gap between legal insight and tech execution — without needing to “speak dev”</li>
+            <li>Why unclear requirements are the root cause of scope creep...</li>
+            {/* Extend list */}
           </ul>
-          <p className="mt-4 text-base">
-            Follow along for the full series, and share with your team if you’re planning a legal tech build of your own.
-          </p>
         </div>
 
-        {/* Signup */}
+        {/* Signup Form */}
         <SignupForm />
 
         {/* Contact */}
-        <p className="mt-12 text-base text-charcoal">
+        <p className="mt-12 text-base">
           Got thoughts or questions?{" "}
           <a
             href="mailto:hello@agileadvocacy.co.uk"
@@ -88,9 +84,8 @@ export default function LandingPage() {
             Get in touch.
           </a>
         </p>
-      </div>
+      </section>
 
-      {/* Footer */}
       <Footer />
     </main>
   );

@@ -21,7 +21,7 @@ export default function LandingPage() {
       {/* Main content */}
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-2xl md:text-4xl font-medium text-charcoal mb-6 leading-snug">
-          Project Skån 1.0
+          Project Skån 1.1
         </h1>
 
         <p className="text-lg text-charcoal mb-8 leading-relaxed italic">

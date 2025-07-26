@@ -1,7 +1,9 @@
 // src/app/page.tsx
-import Image from "next/image"
-import SignupForm from "@/components/SignupForm"
-import Footer from "@/components/Footer"
+
+import Image from "next/image";
+import SignupForm from "@/components/SignupForm";
+import Footer from "@/components/Footer";
+import VideoBlock from "@/components/VideoBlock";
 
 export default function LandingPage() {
   return (
@@ -28,9 +30,21 @@ export default function LandingPage() {
           Why, in my opinion, so many legal tech projects fail before a single line of code is written.
         </p>
 
+        {/* Video */}
+        <VideoBlock
+          src="/video/SkanPlaceholderVideo-1.0.mp4"
+          poster="/images/poster.jpg"
+          className="my-8"
+          autoPlay={false}
+          muted={false}
+          loop={false}
+          controls={true}
+        />
+
+        {/* Introduction */}
         <div className="text-left text-base leading-relaxed space-y-4">
           <p>
-          I’m a former litigation lawyer now working on the product and technology side of legal innovation. Over the years, I’ve worn multiple ‘techie’ hats—developer, UX designer, product owner, and delivery lead—but at its core, my work is about problem-solving. Whether I’m writing code or shaping product strategy, I focus on making things clearer, faster, and genuinely usable.
+            I’m a former litigation lawyer now working on the product and technology side of legal innovation. Over the years, I’ve worn multiple ‘techie’ hats—developer, UX designer, product owner, and delivery lead—but at its core, my work is about problem-solving. Whether I’m writing code or shaping product strategy, I focus on making things clearer, faster, and genuinely usable.
           </p>
           <p>
             I’ve seen legal tech projects from both sides: legal teams frustrated by clunky tools, and tech teams struggling to deliver against vague, shifting briefs. I work in the gap between those worlds—helping turn good ideas into software that actually gets used.
@@ -46,7 +60,7 @@ export default function LandingPage() {
           </p>
         </div>
 
-        {/* Article 1 Card */}
+        {/* Article Teaser Card */}
         <div className="bg-white rounded-xl shadow-md p-6 mt-12 text-left">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-olive text-center">
             Article 1: Want Legal Tech That Works? Start With the Requirements
@@ -61,8 +75,10 @@ export default function LandingPage() {
           </p>
         </div>
 
+        {/* Signup */}
         <SignupForm />
 
+        {/* Contact */}
         <p className="mt-12 text-base text-charcoal">
           Got thoughts or questions?{" "}
           <a
@@ -70,12 +86,12 @@ export default function LandingPage() {
             className="text-black underline hover:text-olive"
           >
             Get in touch.
-          </a>{" "}
+          </a>
         </p>
       </div>
 
       {/* Footer */}
       <Footer />
     </main>
-  )
+  );
 }

@@ -25,9 +25,9 @@ export default function PrivacyPage() {
       <section>
         <h2 className="text-xl font-semibold mb-2">Why we collect it</h2>
         <ul className="list-disc list-inside space-y-1">
-          <li>Send you the resources or updates you’ve requested</li>
+          <li>Send you the resources or updates you&apos;ve requested</li>
           <li>Occasionally follow up with relevant news or updates about Project Skån</li>
-          <li>Respond to any messages or enquiries you’ve submitted</li>
+          <li>Respond to any messages or enquiries you&apos;ve submitted</li>
         </ul>
         <p className="mt-2">We do <strong>not</strong> sell, rent, or share your personal information with third parties.</p>
       </section>
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
       <section>
         <h2 className="text-xl font-semibold mb-2">How we store your data</h2>
         <p>
-          We store your data securely and only for as long as necessary to provide the services you've requested.
+          We store your data securely and only for as long as necessary to provide the services you&apos;ve requested.
           We do <strong>not</strong> use third-party platforms (like Formspree or Airtable) to store personal data.
         </p>
       </section>

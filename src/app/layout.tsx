@@ -1,6 +1,7 @@
 import './globals.css'
 import { IBM_Plex_Sans, Source_Serif_4 } from 'next/font/google'
 import ConditionalNavbar from '@/components/ConditionalNavbar'
+import CookieBanner from '@/components/CookieBanner' // ✅ import the component
 
 const ibm = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans">
         <ConditionalNavbar />
         {children}
+        <CookieBanner /> {/* ✅ inject here so it's outside content but inside layout */}
       </body>
     </html>
   )

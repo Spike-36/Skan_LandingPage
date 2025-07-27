@@ -1,84 +1,72 @@
-// src/app/page.tsx
 import SignupForm from "@/components/SignupForm";
 import Footer from "@/components/Footer";
 import VideoBlock from "@/components/VideoBlock";
+import FeatureCard from "@/components/FeatureCard";
+import BioSection from "@/components/BioSection";
 
 export default function LandingPage() {
   return (
     <main className="bg-offwhite text-charcoal min-h-screen flex flex-col justify-between">
-      {/* Hero Banner */}
-      <section className="flex flex-col md:flex-row min-h-screen bg-black text-white">
-        {/* Left Text */}
-        <div className="md:w-1/2 flex items-center justify-center p-8">
-          <div className="max-w-md text-center md:text-left space-y-6">
-            <h1 className="text-2xl md:text-4xl font-bold leading-snug">
-              One in two women felt unsafe walking alone after dark in a busy public place,
-              compared to one in five men.
-            </h1>
-            <p className="text-lg">
-              Four out of five women felt unsafe walking alone after dark in a park or other open space.
-            </p>
-            <p className="text-sm opacity-60 leading-snug">
-              Office for National Statistics, 2021<br />
-              <span className="italic">
-                Perceptions of personal safety and experiences of harassment,
-                Great Britain: 2 to 27 June 2021
-              </span>
-            </p>
+      {/* Hero Section - Full width black background */}
+      <section className="bg-black text-white mb-12">
+        <div className="max-w-3xl mx-auto w-full px-4 flex flex-col md:flex-row">
+          <div className="md:w-1/2 flex items-center justify-center py-12">
+            <div className="w-full text-center md:text-left space-y-6">
+              <h1 className="text-2xl md:text-4xl font-bold leading-snug">
+                More than 25 million women in UK are scared to walk alone.
+              </h1>
+              <h1 className="text-2xl md:text-4xl font-bold leading-snug">
+                Skån is a simple device to help protect women from abuse, harassment and assault.
+              </h1>
+              <p className="text-lg">
+                Four out of five women felt unsafe walking alone after dark in a park or other open space.
+              </p>
+              <p className="text-sm opacity-60 leading-snug">
+                Office for National Statistics, 2021<br />
+                <span className="italic">
+                  Perceptions of personal safety and experiences of harassment, Great Britain: 2 to 27 June 2021
+                </span>
+              </p>
+            </div>
           </div>
+          <div
+            className="md:w-1/2 h-64 md:h-auto bg-cover bg-center"
+            style={{ backgroundImage: 'url("/images/hero-banner.jpg")' }}
+          />
         </div>
-
-        {/* Right Image */}
-        <div
-          className="md:w-1/2 h-64 md:h-auto bg-cover bg-center"
-          style={{ backgroundImage: 'url("/images/hero-banner.jpg")' }}
-        />
       </section>
 
-      {/* Main Content */}
-      <section className="max-w-3xl mx-auto px-4 py-12 text-center">
-        <h2 className="text-2xl md:text-4xl font-medium mb-6 leading-snug">
-          Project Skån 1.1
-        </h2>
-
-        <p className="text-lg mb-8 leading-relaxed italic">
-          Why, in my opinion, so many legal tech projects fail before a single line of code is written.
-        </p>
+      {/* Main Content Container */}
+      <div className="max-w-3xl mx-auto w-full px-4">
+        {/* Feature Cards */}
+        <section className="space-y-6 mb-12">
+          <FeatureCard title="Preventing incidents requires an effective deterrent." description="" />
+          <FeatureCard title="The most powerful deterrent is perpetrators believing they will be caught." description="" />
+          <FeatureCard title="Skån captures and secures evidence to identify and convict perpetrators." description="" />
+        </section>
 
         {/* Video */}
         <VideoBlock
           src="/video/SkanPlaceholderVideo-1.0.mp4"
           poster="/images/poster.jpg"
-          className="my-8"
+          className="my-12"
         />
-
-        {/* Intro */}
-        <div className="text-left text-base leading-relaxed space-y-4">
-          <p>
-            I’m a former litigation lawyer now working on the product and technology side of legal innovation...
-          </p>
-          {/* Extend as needed */}
-        </div>
-
-        {/* Article Teaser */}
-        <div className="bg-white rounded-xl shadow-md p-6 mt-12 text-left">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-olive text-center">
-            Article 1: Want Legal Tech That Works? Start With the Requirements
-          </h2>
-          <ul className="list-disc list-inside text-base space-y-2 leading-relaxed text-charcoal">
-            <li>Why unclear requirements are the root cause of scope creep...</li>
-            {/* Extend list */}
-          </ul>
-        </div>
 
         {/* Signup Form */}
         <SignupForm />
+      </div>
 
-        {/* Contact */}
-        <p className="mt-12 text-base">
+      {/* Bio Section - Full width background */}
+      <div className="bg-gray-100 w-full">
+        <BioSection />
+      </div>
+
+      {/* Contact */}
+      <section className="text-center py-12">
+        <p className="text-base">
           Got thoughts or questions?{" "}
           <a
-            href="mailto:hello@agileadvocacy.co.uk"
+            href="mailto:sarah@project-skan.org"
             className="text-black underline hover:text-olive"
           >
             Get in touch.
@@ -86,6 +74,7 @@ export default function LandingPage() {
         </p>
       </section>
 
+      {/* Footer */}
       <Footer />
     </main>
   );

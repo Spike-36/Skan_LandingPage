@@ -42,9 +42,9 @@ export default function SignupForm() {
 
   return (
     <section id="signup" className="bg-gray-50 py-12 px-4 text-center">
-      <h2 className="text-2xl font-semibold mb-4">Get the Free Article</h2>
+      <h2 className="text-2xl font-semibold mb-4">Join our movement - Project Skån<noscript></noscript></h2>
       <p className="text-gray-700 max-w-xl mx-auto mb-8">
-        Download “Want Legal Tech That Works? Start With the Requirements”
+        Be part of the mission to protect women with technology that actually helps.
       </p>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
@@ -67,14 +67,14 @@ export default function SignupForm() {
           className="p-3 border rounded w-full"
         />
         <p className="text-xs text-gray-500 text-left">
-          We’ll send you this and future articles and occasional legal tech updates. Unsubscribe anytime.
+          We’ll send you occasional updates. Unsubscribe anytime.
         </p>
         <button
           type="submit"
           disabled={loading}
           className="mt-6 bg-olive text-white px-6 py-3 rounded hover:opacity-90 disabled:opacity-60"
         >
-          {loading ? "Submitting..." : "Start Reading"}
+          {loading ? "Submitting..." : "Fight the bullies"}
         </button>
         {status && <p className="mt-2 text-red-600">{status}</p>}
       </form>
